@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Online - SOLID & OOP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Главная страница -->
+    <div id="home-page" class="page page--active">
+        <header class="header">
+            <h1 class="header__title">♟ Chess Online</h1>
+            <p class="header__subtitle">SOLID Principles & OOP Implementation</p>
+        </header>
+
+        <main class="main">
+            <div class="cards">
+                <button class="card card--play" onclick="gameApp.startGame()">
+                    <span class="card__icon">🎮</span>
+                    <h2 class="card__title">Play Game</h2>
+                    <p class="card__text">Local Two-Player Mode</p>
+                </button>
+                <div class="card card--info">
+                    <span class="card__icon">📚</span>
+                    <h2 class="card__title">Architecture</h2>
+                    <p class="card__text">Built with SOLID Design</p>
+                </div>
+            </div>
+
+            <section class="features">
+                <h2 class="features__title">Features</h2>
+                <ul class="features__list">
+                    <li class="feature"><span>✓</span> Full Chess Rules (OOP)</li>
+                    <li class="feature"><span>✓</span> Move Validation (SRP)</li>
+                    <li class="feature"><span>✓</span> Polymorphism in Pieces</li>
+                    <li class="feature"><span>✓</span> BEM Methodology</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <!-- Страница игры -->
+    <div id="game-page" class="page">
+        <header class="game-header">
+            <button class="btn btn--back" onclick="gameApp.showHome()">← Back</button>
+            <h1 class="game-header__title">Chess Board</h1>
+        </header>
+
+        <div class="game-info">
+            <div id="player-white" class="player player--active"> White's Turn</div>
+            <div id="player-black" class="player"> Black's Turn</div>
+        </div>
+
+        <div class="board-container">
+            <div id="chess-board" class="board"></div>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn--undo" onclick="gameApp.undo()">↶ Undo</button>
+            <button class="btn btn--reset" onclick="gameApp.reset()">⟲ Reset</button>
+        </div>
+
+        <div class="history">
+            <h3>Move History</h3>
+            <ul id="move-list"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

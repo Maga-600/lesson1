@@ -1,0 +1,75 @@
+/* Базовые стили */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #1e293b, #334155);
+    color: white;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.page { display: none; padding: 2rem; }
+.page--active { display: block; }
+
+/* Header */
+.header { text-align: center; margin-bottom: 3rem; }
+.header__title { font-size: 3rem; margin: 0; }
+.header__subtitle { color: #94a3b8; font-size: 1.2rem; }
+
+/* Cards */
+.cards { display: flex; gap: 2rem; justify-content: center; margin-bottom: 3rem; }
+.card {
+    background: rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 300px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+    border: none;
+    color: white;
+}
+.card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.15); }
+.card--play { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+.card__icon { font-size: 3rem; display: block; margin-bottom: 1rem; }
+.card__title { margin: 0 0 0.5rem 0; }
+.card__text { color: rgba(255,255,255,0.8); margin: 0; }
+
+/* Features */
+.features { max-width: 800px; margin: 0 auto; background: rgba(0,0,0,0.2); padding: 2rem; border-radius: 1rem; }
+.features__title { text-align: center; margin-top: 0; }
+.features__list { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.feature { display: flex; align-items: center; gap: 0.5rem; }
+.feature span { color: #10b981; font-weight: bold; }
+
+/* Game Page */
+.game-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+.btn { padding: 0.8rem 1.5rem; border: none; border-radius: 0.5rem; cursor: pointer; font-weight: bold; }
+.btn--back { background: transparent; color: #3b82f6; font-size: 1.1rem; }
+.btn--undo { background: #6b7280; color: white; }
+.btn--reset { background: #3b82f6; color: white; }
+
+.game-info { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; }
+.player { padding: 1rem 2rem; background: rgba(255,255,255,0.1); border-radius: 0.5rem; opacity: 0.5; }
+.player--active { opacity: 1; background: rgba(59, 130, 246, 0.3); box-shadow: 0 0 15px rgba(59, 130, 246, 0.5); }
+
+.board-container { display: flex; justify-content: center; margin-bottom: 2rem; }
+.board {
+    display: grid;
+    grid-template-columns: repeat(8, 60px);
+    grid-template-rows: repeat(8, 60px);
+    border: 5px solid #1e293b;
+    border-radius: 4px;
+}
+.cell {
+    width: 60px; height: 60px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 40px; cursor: pointer; user-select: none;
+}
+.cell--white { background-color: #f0d9b5; }
+.cell--black { background-color: #b58863; }
+.cell--selected { background-color: #7b61ff !important; }
+
+.controls { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
+.history { max-width: 600px; margin: 0 auto; background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 1rem; }
+.history ul { list-style: none; padding: 0; max-height: 150px; overflow-y: auto; }
+.history li { padding: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: monospace; }
